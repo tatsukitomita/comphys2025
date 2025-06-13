@@ -1,0 +1,4 @@
+name = "Equation_of_motion"
+uuid = "a5dc6ae2-aa51-47b5-b10c-9cf9fc113779"
+authors = ["Tatsuki Tomita <tomita.tatsuki725@gmail.com>"]
+version = "0.1.0"
