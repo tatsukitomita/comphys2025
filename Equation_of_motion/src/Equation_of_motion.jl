@@ -17,6 +17,7 @@ function solve_system(v, x, tmax, numtimes, F::Function)
     h = tmax/numtimes
     x1 = x
     v1 = v
+    t = 0.0 
     for i in 1:numtimes
         x2 = solve_x(v1, x1, h)
         v2 = solve_v(v1, x2, t, h, F)

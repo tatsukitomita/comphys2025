@@ -1,6 +1,6 @@
 using Equation_of_motion
 
-import Equation_of_motion: solve_x, solve_y, solve_system
+import Equation_of_motion: solve_x, solve_v, solve_system
 using Test
 
 @testset "Equation_of_motion.jl" begin
@@ -9,16 +9,16 @@ using Test
         x = 0.0
         tmax = 10.0
         numtimes = 1000
+        @test solve_x(v, x, h) == 0.01
         @test solve_x(v, x, h) ≈ 0.01 atol=1e-5
     end
 
     @testset "solve_v_test" begin
-        v = 1.0
-        x = 1.0
-        t = 0.01
-        h = 0.01
-        F(x, t) = 2.0   # Example function for F
-        @test solve_v(v, x, t, h, F) == 1.02  
+    v = 1.0
+    x = 1.0
+    t = h
+    F(x, t) = 2.0   # Example function for F
+    @test solve_v(v, x, t, h, F) == 1.02  
     end
 
     @testset "位置と時間に依存しない場合" begin
